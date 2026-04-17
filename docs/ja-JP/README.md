@@ -6,7 +6,7 @@
 
 **言語**: [English](../../README.md)
 
-**Verified Coherence Spec-Driven Development (VCSDD)** をあらゆるプロジェクトにもたらす Claude Code プラグイン。
+**Verified Coherence Spec-Driven Development (VCSDD)** をあらゆるプロジェクトにもたらす Claude Code プラグイン（Codex向けインストールにも対応）。
 
 ---
 
@@ -172,7 +172,12 @@ bash install.sh --profile standard
 
 # TypeScript言語プロファイルを追加する場合
 bash install.sh --profile standard --language typescript
+
+# Codex向けにインストールする場合
+bash install.sh --target codex --profile standard
 ```
+
+`--target codex` を使うと、アセットは `$CODEX_HOME/plugins/vcsdd-claude-code`（デフォルト: `~/.codex/plugins/vcsdd-claude-code`）に配置され、`$CODEX_HOME/AGENTS.md` にVCSDD用の管理ブロックが追記されます。
 
 **方法3: パッケージマネージャー**
 
@@ -181,7 +186,7 @@ npx vcsdd-claude-code --profile standard
 pnpm dlx vcsdd-claude-code --profile standard
 ```
 
-インストール後は **Claude Codeを再起動**（またはウィンドウをリロード）してプラグインを有効化してください。`/vcsdd-status`（インストールスクリプト）または `/vcsdd:status`（プラグインシステム）で動作確認できます。
+インストール後は **Claude Codeを再起動**（またはウィンドウをリロード）してプラグインを有効化してください。Codex向けにインストールした場合は、`$CODEX_HOME/AGENTS.md` を再読込させるため Codex を再起動してください。`/vcsdd-status`（インストールスクリプト）または `/vcsdd:status`（プラグインシステム）で動作確認できます。
 
 ### ステップ2: フィーチャーパイプラインを開始する
 
