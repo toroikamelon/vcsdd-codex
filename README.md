@@ -7,7 +7,7 @@
 **Languages**: [日本語](docs/ja-JP/README.md)
 ![Node](https://img.shields.io/badge/node-%3E%3D18.0.0-brightgreen)
 
-A Claude Code plugin that brings **Verified Coherence Spec-Driven Development (VCSDD)** methodology to any project. It enforces spec-first, test-first, adversarial review, and formal verification as sequential quality gates.
+A Claude Code plugin that brings **Verified Coherence Spec-Driven Development (VCSDD)** methodology to any project, now with Codex installer support. It enforces spec-first, test-first, adversarial review, and formal verification as sequential quality gates.
 
 ---
 
@@ -225,7 +225,12 @@ bash install.sh --profile standard
 
 # Optional: add a language profile
 bash install.sh --profile standard --language typescript
+
+# Install for Codex instead of Claude Code
+bash install.sh --target codex --profile standard
 ```
+
+When `--target codex` is used, assets are installed under `$CODEX_HOME/plugins/vcsdd-claude-code` (default: `~/.codex/plugins/vcsdd-claude-code`) and a managed VCSDD block is written to `$CODEX_HOME/AGENTS.md`.
 
 **Option 3: Package Manager**
 
@@ -234,7 +239,7 @@ npx vcsdd-claude-code --profile standard
 pnpm dlx vcsdd-claude-code --profile standard
 ```
 
-**Restart Claude Code** (or reload the window) after install. Confirm with `/vcsdd-status` (install script) or `/vcsdd:status` (plugin system).
+**Restart Claude Code** (or reload the window) after install. For Codex installs, reopen Codex so it reloads `$CODEX_HOME/AGENTS.md`. Confirm with `/vcsdd-status` (install script) or `/vcsdd:status` (plugin system).
 
 ```
 # Open a project in Claude Code, then:
